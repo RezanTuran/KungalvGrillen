@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/adminPanel/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- ### CDN Link For Jquery  ###-->
     <script defer src="/adminPanel/js/admin.js"></script>
     <title>KungälvsGrillen | Adminpanel</title>
 </head>
 <body>
-    
+
 <section id="insertProduct">
         <h1 align="center" id="productInsertRubric">Lägg till produkt</h1>
     
@@ -19,13 +21,14 @@
         <hr>
         <input type="text" name="insertPizzaIngredienser" placeholder="Pizza ingredienser">
         <hr>
-        <input class="file" type="file" name="insertPizzaImage" id="imageUploadInput">
+        <input type="file" name="insertPizzaImage" id="imageUploadInput">
         <hr>
-        <button id="insertProductButton" onclick="insertProduct();">Spara</button>
+        <button class="btn btn-success" id="insertProductButton" onclick="insertProduct();">Spara</button>
         <hr>
 </section>
 
-<section id="productList">
+<section id="productList" class="table">
+    <input  id="searchInput" class="form-control" type="text" placeholder="Sök Produkt..">
         <h1 align="center">Produkt Lista</h1>
         <table id="table">
             <tr>
@@ -34,11 +37,10 @@
                 <th>Pizza Namn</th>
                 <th>Pizza Ingredienser</th>
                 <th>Pizza Img</th>
-                <th>Edit</th>
             </tr>
         </table>
-        <button onclick="updateProduct();">Updatera</button>
-    </section>
+        <button id="updateButton" onclick="updateProduct();">Updatera</button>
+ </section>
 
 
 </body>

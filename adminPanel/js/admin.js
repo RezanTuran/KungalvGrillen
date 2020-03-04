@@ -35,7 +35,6 @@ function insertProduct() {
             location.reload();
         }
         console.log(result);
-        
     }) 
 }
 
@@ -118,6 +117,7 @@ function fillFormWithData(product) {
     document.getElementsByName("insertPizzaIngredienser")[0].value = product.pizzaIngredienser
     document.getElementById("imageUploadInput").style.display = "none";
     document.getElementById("insertProductButton").style.display = "none";
+    document.getElementById("updateButton").style.display = "block";
 };
 
 function prepareUpdateProduct(product) {
@@ -153,3 +153,12 @@ function updateProduct() {
         
     })
 }
+// ### Serach Function For AdminPanel ### //
+$(document).ready(function(){
+    $("#searchInput").on("keyup", function() {
+      const value = $(this).val().toLowerCase();
+      $("#table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
