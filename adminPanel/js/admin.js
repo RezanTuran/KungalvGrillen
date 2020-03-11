@@ -18,6 +18,7 @@ function insertProduct() {
     let insertPizzaNr = document.getElementsByName("insertPizzaNr")[0].value
     let insertPizzaName = document.getElementsByName("insertPizzaName")[0].value
     let insertPizzaIngredienser = document.getElementsByName("insertPizzaIngredienser")[0].value
+    let insertPizzaPrice = document.getElementsByName("insertPizzaPrice")[0].value
     let insertPizzaImage = document.getElementsByName("insertPizzaImage")[0].files[0]
 
     var data = new FormData()
@@ -26,11 +27,23 @@ function insertProduct() {
     data.append("pizzaNr", insertPizzaNr);
     data.append("pizzaName", insertPizzaName);
     data.append("pizzaIngredienser", insertPizzaIngredienser);
+    data.append("pizzaPrice", insertPizzaPrice);
     data.append("pizzaImg", insertPizzaImage);
 
+    if (insertPizzaNr == "") {
+        alert("Ange pizzanummer")
+    } if (insertPizzaName == "") {
+        alert("Skriv pizzanamn")
+    } if (insertPizzaIngredienser == "") {
+        alert("Skriv pizzaingredienser")
+    }
 
-     makeRequest('./../server/recievers/pizzaRecievers.php', "POST", data, (result) => {
-
+    makeRequest('./../server/recievers/pizzaRecievers.php', "POST", data, (result) => {
+        if (result == true) {
+            alert("Produkten har sparat i databasen")
+        } else {
+            alert("Det gick inte spara produkten försök igen!")
+        }
         if(result){
             location.reload();
         }
@@ -49,6 +62,7 @@ function getAllProduct() {
             let pizzaNr = (result[i].pizzaNr);
             let pizzaName = (result[i].pizzaName);
             let pizzaIngredienser = (result[i].pizzaIngredienser);
+            let pizzaPrice = (result[i].pizzaPrice);
             let pizzaImg = (result[i].pizzaImg);
             
 
@@ -58,6 +72,7 @@ function getAllProduct() {
             let pizzaNrTd = document.createElement("td");
             let pizzaNameTd = document.createElement("td");
             let pizzaIngredienserTd = document.createElement("td");
+            let pizzaPriceTd = document.createElement("td");
             let pizzaImgTd = document.createElement("img");
             let deleteButton = document.createElement("button");
             let updateButton = document.createElement("button");
@@ -77,6 +92,7 @@ function getAllProduct() {
             pizzaNrTd.innerText = pizzaNr;
             pizzaNameTd.innerText = pizzaName;
             pizzaIngredienserTd.innerText = pizzaIngredienser;
+            pizzaPriceTd.innerText = pizzaPrice;
             deleteButton.innerText = "Delete";
             updateButton.innerText = "Update";
 
@@ -85,6 +101,7 @@ function getAllProduct() {
             row.appendChild(pizzaNrTd);
             row.appendChild(pizzaNameTd);
             row.appendChild(pizzaIngredienserTd);
+            row.appendChild(pizzaPriceTd);
             row.appendChild(pizzaImgTd);
             row.appendChild(deleteButton);
             row.appendChild(updateButton);
@@ -115,6 +132,7 @@ function fillFormWithData(product) {
     document.getElementsByName("insertPizzaNr")[0].value = product.pizzaNr
     document.getElementsByName("insertPizzaName")[0].value = product.pizzaName
     document.getElementsByName("insertPizzaIngredienser")[0].value = product.pizzaIngredienser
+    document.getElementsByName("insertPizzaPrice")[0].value = product.pizzaPrice
     document.getElementById("imageUploadInput").style.display = "none";
     document.getElementById("insertProductButton").style.display = "none";
     document.getElementById("updateButton").style.display = "block";
@@ -133,6 +151,7 @@ function updateProduct() {
         pizzaNr: document.getElementsByName("insertPizzaNr")[0].value,
         pizzaName: document.getElementsByName("insertPizzaName")[0].value,
         pizzaIngredienser: document.getElementsByName("insertPizzaIngredienser")[0].value,
+        pizzaPrice: document.getElementsByName("insertPizzaPrice")[0].value,
     };
 
         var data = new FormData();
@@ -142,6 +161,7 @@ function updateProduct() {
         data.append("pizzaNr", productToUpdate.pizzaNr);
         data.append("pizzaName", productToUpdate.pizzaName);
         data.append("pizzaIngredienser", productToUpdate.pizzaIngredienser);
+        data.append("pizzaPrice", productToUpdate.pizzaPrice);
 
 
     makeRequest('./../server/recievers/pizzaRecievers.php', "POST", data, (result) => {
