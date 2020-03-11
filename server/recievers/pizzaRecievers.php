@@ -8,6 +8,7 @@ try {
                 $_POST["pizzaNr"],
                 $_POST["pizzaName"],
                 $_POST["pizzaIngredienser"],
+                $_POST["pizzaPrice"],
                 $_FILES["pizzaImg"],
             ));
             exit;
@@ -24,6 +25,7 @@ try {
                 $_POST["pizzaNr"],
                 $_POST["pizzaName"],
                 $_POST["pizzaIngredienser"],
+                $_POST["pizzaPrice"],
             ));
             exit;
         }else {

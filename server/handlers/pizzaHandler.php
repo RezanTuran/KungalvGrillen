@@ -1,16 +1,17 @@
 <?php
 // ### Insert Product ### //
-function add($pizzaNr,$pizzaName,$pizzaIngredienser,$pizzaImg) {
+function add($pizzaNr,$pizzaName,$pizzaIngredienser,$pizzaPrice,$pizzaImg) {
     include_once("./../handlers/imageHandler.php");
     include_once("./../classes/database.php");
     $imageUrl = uploadImage($pizzaImg);
 
     $database = new Database();
-    $query = $database->connection->prepare("INSERT INTO pizzas (pizzaNr,pizzaName,pizzaIngredienser,pizzaImg) VALUES (:pizzaNr, :pizzaName, :pizzaIngredienser, :pizzaImg)");
+    $query = $database->connection->prepare("INSERT INTO pizzas (pizzaNr,pizzaName,pizzaIngredienser,pizzaPrice,pizzaImg) VALUES (:pizzaNr, :pizzaName, :pizzaIngredienser, :pizzaPrice, :pizzaImg)");
     $status = $query->execute(array(
         "pizzaNr" => $pizzaNr,
         "pizzaName"=>$pizzaName,
         "pizzaIngredienser"=>$pizzaIngredienser,
+        "pizzaPrice" => $pizzaPrice,
         "pizzaImg"=>$imageUrl
     ));
 
@@ -24,7 +25,7 @@ function add($pizzaNr,$pizzaName,$pizzaIngredienser,$pizzaImg) {
 function getAll() {
     include_once("./../classes/database.php");
     $database = new Database();
-    $query = $database->connection->prepare("SELECT id,pizzaNr,pizzaName,pizzaIngredienser,pizzaImg FROM pizzas");
+    $query = $database->connection->prepare("SELECT id,pizzaNr,pizzaName,pizzaIngredienser,pizzaPrice,pizzaImg FROM pizzas");
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     
@@ -51,16 +52,17 @@ function deleteProduct($id) {
     return $query->rowCount();
 }
 // ### Update Product ### //
-function uppdate($id,$pizzaNr,$pizzaName,$pizzaIngredienser) {
+function uppdate($id,$pizzaNr,$pizzaName,$pizzaIngredienser,$pizzaPrice) {
     include_once("./../classes/database.php");
     try {
         $database = new Database();
-        $query = $database->connection->prepare("UPDATE pizzas SET pizzaNr=:pizzaNr, pizzaName=:pizzaName, pizzaIngredienser=:pizzaIngredienser WHERE id = :id");
+        $query = $database->connection->prepare("UPDATE pizzas SET pizzaNr=:pizzaNr, pizzaName=:pizzaName, pizzaPrice=:pizzaPrice, pizzaIngredienser=:pizzaIngredienser WHERE id = :id");
         $status = $query->execute(array(
             "id"=>$id,
             "pizzaNr" => $pizzaNr,
             "pizzaName" => $pizzaName,
             "pizzaIngredienser"=>$pizzaIngredienser,
+            "pizzaPrice"=>$pizzaPrice,
         ));
     } catch(PDOException $err) {
         error_log($err);

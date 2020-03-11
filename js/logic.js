@@ -10,28 +10,7 @@ function makeRequest(url, method, formdata, callback) {
         console.log("Error: ", err)
     })   
 }
-function insertProduct() {
-    let insertPizzaNr = document.getElementsByName("insertPizzaNr")[0].value
-    let insertPizzaName = document.getElementsByName("insertPizzaName")[0].value
-    let insertPizzaIngredienser = document.getElementsByName("insertPizzaIngredienser")[0].value
-    let insertPizzaImage = document.getElementsByName("insertPizzaImage")[0].files[0]
-
-    var data = new FormData()
-
-    data.append("action", "add");
-    data.append("pizzaNr", insertPizzaNr);
-    data.append("pizzaName", insertPizzaName);
-    data.append("pizzaIngredienser", insertPizzaIngredienser);
-    data.append("pizzaImg", insertPizzaImage);
-
-
-     makeRequest('./../server/recievers/pizzaRecievers.php', "POST", data, (result) => {
-
-        console.log(result);
-        
-    }) 
-}
-
+// Get product //
 function getAllProduct() {
     makeRequest("./../server/recievers/pizzaRecievers.php?action=getAll", "GET", null, (result) => {
         
@@ -42,6 +21,7 @@ function getAllProduct() {
             let pizzaNr = (result[i].pizzaNr);
             let pizzaName = (result[i].pizzaName);
             let pizzaIngredienser = (result[i].pizzaIngredienser);
+            let pizzaPrice = (result[i].pizzaPrice);
             let pizzaImg = (result[i].pizzaImg);
             
 
@@ -51,19 +31,24 @@ function getAllProduct() {
             let pizzaNrTd = document.createElement("td");
             let pizzaNameTd = document.createElement("td");
             let pizzaIngredienserTd = document.createElement("td");
+            let pizzaPriceTd = document.createElement("td");
             let pizzaImgTd = document.createElement("img");
+
+            pizzaPriceTd.classList = "pizzaPrice";
+            idTd.classList = "pizzaId"
 
             pizzaImgTd.src = '../img/product_img/' + pizzaImg;
             idTd.innerText = id;
             pizzaNrTd.innerText = pizzaNr;
             pizzaNameTd.innerText = pizzaName;
             pizzaIngredienserTd.innerText = pizzaIngredienser;
-
-
+            pizzaPriceTd.innerText = pizzaPrice;
+            
             row.appendChild(idTd);
             row.appendChild(pizzaNrTd);
             row.appendChild(pizzaNameTd);
             row.appendChild(pizzaIngredienserTd);
+            row.appendChild(pizzaPriceTd)
             row.appendChild(pizzaImgTd);
 
             table.appendChild(row);
@@ -81,7 +66,7 @@ $(document).ready(function () {
     });
 });
 
-// Change Div Background //
+// ServiceBox Animation //
 function serviceDivAniamtion1() {
     let cahngeDivBackgorund1 = document.getElementById("serviceDiv1");
     cahngeDivBackgorund1.style.transform = "rotate(50deg)";
@@ -140,3 +125,5 @@ function serviceDivAniamtionOut3() {
     let changeIconColor = document.getElementById("serviceIcon3");
     changeIconColor.style.color = "#212529";
 }
+
+

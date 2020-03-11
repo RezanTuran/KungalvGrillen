@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -34,7 +39,7 @@
 <div id="slideShow" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->
-        <ul class="carousel-indicators">
+        <ul class="carousel-indicators" id="hideForResponsive">
           <li data-target="#slideShow" data-slide-to="0" class="active"></li>
           <li data-target="#slideShow" data-slide-to="1"></li>
           <li data-target="#slideShow" data-slide-to="2"></li>
@@ -70,7 +75,7 @@
             <span class="phone-icon"><i class="fas fa-phone"></i></span>
         </div>
         <div class="text">
-            <h3 class="telNr">0303-155 57</h3>
+            <h3 class="telNr">0303 - 155 57</h3>
             <p>Ring för beställa!</p>
         </div>
     </div>
@@ -99,7 +104,7 @@
             <a class="socialMediaIcon" href=""><i class="fab fa-instagram"></i></a>
     </div>
 </section>
-
+    
 <section id="about"> 
     <div class="aboutImgDiv"><img class="aboutImg" src="img/about.jpg" alt="about"></div>
     <div class="aboutTextDiv">
@@ -108,7 +113,7 @@
             <p class="aboutPtag">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident quae cupiditate, at recusandae dolor quia quisquam illo ratione soluta corporis, nulla, commodi reprehenderit et iure optio sunt quasi ex.
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sit perspiciatis doloremque sapiente rem delectus aperiam eos praesentium molestiae quam, nobis blanditiis debitis illum quod dolorem eum accusamus modi tempora.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi consequuntur reiciendis reprehenderit veniam excepturi, earum illo exercitationem nulla quam sapiente, cumque in ullam. Corporis vero et temporibus perspiciatis quasi omnis?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi consequuntur reiciendis reprehenderit veniam excepturi.
             </p>
         </div>
     </div>
@@ -139,17 +144,67 @@
         <div class="textBoxService"><p class="textService">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas in adipisci repudiandae, fuga, labore, impedit architecto est suscipit eum ab officiis libero odio similique esse corrupti ullam quos hic consequuntur.</p></div>
     </div>
 </section>
-<section id="favPizza"></section>
+<div class="favPizzaRubrikDiv">
+    <h2 class="favPizzaRubrik">Mest populära pizzor</h2>
+</div>
+<section id="favPizza">
+    <div class="favPizzaContainer">
+        <div class="favPizzaBoxImg1"></div>
+        <div class="favPizzaBox">
+            <h3 class="favPizzaName">Italian Pizza</h3>
+            <p class="favPizzaIngrText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos cupiditate tempora tempore aliquam fugiat iusto rerum.</p>
+            <p class="FavPizzaPrice"> 90 KR</p>
+        </div>
+        <div class="favPizzaBoxImg2"></div>
+        <div class="favPizzaBox">
+            <h3 class="favPizzaName">Greek Pizza</h3>
+            <p class="favPizzaIngrText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos cupiditate tempora tempore aliquam fugiat iusto rerum.</p>
+            <p class="FavPizzaPrice"> 90 KR</p>
+        </div>
+        <div class="favPizzaBoxImg3"></div>
+        <div class="favPizzaBox">
+            <h3 class="favPizzaName">Swedish Pizza</h3>
+            <p class="favPizzaIngrText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos cupiditate tempora tempore aliquam fugiat iusto rerum.</p>
+            <p class="FavPizzaPrice"> 90 KR</p>
+        </div>
+    </div>
+    <div class="favPizzaContainerRad-2">
+            <div class="favPizzaBoxRad-2">
+                <h3 class="favPizzaName">Italian Pizza</h3>
+                <p class="favPizzaIngrText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos cupiditate tempora tempore aliquam fugiat iusto rerum.</p>
+                <p class="FavPizzaPrice"> 90 KR</p>
+            </div>
+            <div class="favPizzaBoxImg4"></div>
+            <div class="favPizzaBoxRad-2">
+                <h3 class="favPizzaName">Greek Pizza</h3>
+                <p class="favPizzaIngrText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos cupiditate tempora tempore aliquam fugiat iusto rerum.</p>
+                <p class="FavPizzaPrice"> 90 KR</p>
+            </div>
+             <div class="favPizzaBoxImg5"></div>
+            <div class="favPizzaBoxRad-2">
+                <h3 class="favPizzaName">Swedish Pizza</h3>
+                <p class="favPizzaIngrText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos cupiditate tempora tempore aliquam fugiat iusto rerum.</p>
+                <p class="FavPizzaPrice"> 90 KR</p>
+            </div>
+            <div class="favPizzaBoxImg6"></div>
+        </div>
+</section>
 
-<!---
+<section id="menu">
+    <h2 class="menuRubtik">Upptäck vår meny</h2>
+    <p class="underRubrik">
+        <span class="deg1"></span>
+        <span class="deg2"></span>
+        <span class="deg3"></span>
+    </p>
+        <table id="table"></table> 
+    
+</section>
+
+
+<!--
 <section>
-    <table id="table">
-        <th>Pizza id</th>
-        <th>Pizza Nummer</th>
-        <th>Pizza Namn</th>
-        <th>Pizza Ingredienser</th>
-        <th>Pizza Img</th>
-    </table> 
+
 </section>
 -->
 
