@@ -197,16 +197,50 @@
         <span class="deg2"></span>
         <span class="deg3"></span>
     </p>
+    <div id="searchContainer">
+        <input  id="searchInput" class="form-control" type="text" placeholder="Sök pizza..">
+    </div>
+    <div id="menyContainer">
         <table id="table"></table> 
-    
+    </div>
 </section>
 
-
-<!--
-<section>
-
+<section id="galery">
+    <div id="GaleryImg-1"></div>
+    <div id="GaleryImg-2"></div>
+    <div id="GaleryImg-3"></div>
+    <div id="GaleryImg-4"></div>
 </section>
--->
+
+<section id="counter">
+    <div class="overlay"></div>
+    <div class="counterContainerIcons">
+        <div onmouseover="counterRowAnimation1();" onmouseout="counterRowAnimation1Out();" id="counterRow1"><i id="changeCounterIconColor1" class="fas fa-pizza-slice counterIcons"></i></div>
+        <div onmouseover="counterRowAnimation2();" onmouseout="counterRowAnimation2Out();" id="counterRow2"><i id="changeCounterIconColor2" class="fas fa-medal counterIcons"></i></div>
+        <div onmouseover="counterRowAnimation3();" onmouseout="counterRowAnimation3Out();" id="counterRow3"><i id="changeCounterIconColor3" class="fas fa-grin-beam counterIcons"></i></div>
+        <div onmouseover="counterRowAnimation4();" onmouseout="counterRowAnimation4Out();" id="counterRow4"><i id="changeCounterIconColor4" class="fas fa-user-check counterIcons"></i></div>
+    </div>
+    <div class="counterContainerForNumber">
+        <div class="counterNumber1">
+            <strong>100</strong>
+        </div>
+        <div class="counterNumber2">
+            <strong>85</strong>
+        </div>
+        <div class="counterNumber3">
+            <strong>10,567</strong>
+        </div>
+        <div class="counterNumber4">
+            <strong>900</strong>
+        </div>
+    </div>
+    <div class="counterContainerForText">
+        <div class="counterText1"><span>Pizza Sorter</span></div>
+        <div class="counterText2"><span>Antal Utmärkelser</span></div>
+        <div class="counterText3"><span>Nöjda Kunder</span></div>
+        <div class="counterText4"><span>Trevlig Personal</span></div>
+    </div>
+</section>
 
 </body>
 </html>

@@ -237,7 +237,7 @@ p{
 }
 /* ### FavPizza ### */
 #favPizza{
-  height: 100vh;
+  height: auto;
   background: url(../img/bg_4.jpg);
   background-size: cover;
   margin-top: -3.5em;
@@ -349,7 +349,7 @@ p{
 #menu{
   background: url(../img/bg_4.jpg);
   background-size: cover;
-  height: auto;
+  height: 150vh;
   padding-top: 5em;
 }
 .menuRubtik{
@@ -430,6 +430,166 @@ p{
   transform: rotate(135deg);
   margin: 0 auto;
 }
+#menyContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* Pizza Table */
+
+img{
+  width: 5em;
+}
+#table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  color: white;
+  margin-top: 4em;
+}
+
+#table td, #table th {
+  padding: 8px;
+}
+#table tr:hover {
+  background-color: black;
+  transform: 5s;
+}
+.pizzaPrice{
+color: #fac564;
+}
+.pizzaId{
+display: none;
+}
+#searchContainer{
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+#searchInput{
+  width: 70%;
+  color: gray;
+  background-color: transparent;
+  border: 2px solid #fac564;
+}
+#galery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20em;
+  margin-top: -1em;
+}
+#GaleryImg-1, #GaleryImg-2,#GaleryImg-3,#GaleryImg-4{
+  width: 100%;
+  height: 20em;
+}
+#GaleryImg-1{
+  background: url(../img/galerimg4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#GaleryImg-2{
+  background: url(../img/galeryimg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#GaleryImg-3{
+  background: url(../img/galeryimg3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#GaleryImg-4{
+  background: url(../img/galetimg1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* ### Status ### */
+#counter{
+  background-image: url(../img/galetimg1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  z-index: 0;
+  height: 50vh;;
+}
+.counterContainerIcons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+#counterRow1,#counterRow2,#counterRow3,#counterRow4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fac564;
+  z-index: 1;
+  height: 7em;
+  width: 7em;
+  margin: 3em;
+}
+.counterIcons{
+  color: #fac564;
+  font-size: 35px;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: .8;
+}
+.counterContainerForNumber{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.counterNumber1,.counterNumber2,.counterNumber3,.counterNumber4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 7em;
+  width: 7em;
+  margin: 3em;
+  margin-top: -10em;
+}
+strong{
+  font-weight: 400;
+  font-size: 30px;
+  color: #fac564;
+}
+.counterContainerForText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.counterText1,.counterText2,.counterText3,.counterText4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin: 3em;
+  margin-top: -4em;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  padding-left: 0.6em;
+}
+
 @media screen and (max-width: 768px)  {
 
   /* ### Nav begin */
@@ -557,30 +717,44 @@ ul li {
   width: 50%;
   margin-bottom: 30px;
 }
+#table{
+  width: 90%;
+  font-size: 12px;
+} 
+#galery{
+  flex-direction: column;
+  height: auto;
 }
-/* Pizza Table */
+.GaleryImg-1, .GaleryImg-2,.GaleryImg-3,.GaleryImg-4{
+  width: 90%;
+  margin: 5px;
+}
 
-  img{
-    width: 5em;
-  }
-  #table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    color: white;
-    margin-top: 4em;
-  }
-  
-  #table td, #table th {
-    padding: 8px;
-  }
-  #table tr:hover {
-    background-color: black;
-    transform: 5s;
+
+/*  ###  ### */
+#counter{
+  height: auto;
 }
-.pizzaPrice{
-  color: #fac564;
+.counterContainerIcons{
+  flex-wrap: wrap;
 }
-.pizzaId{
-  display: none;
+.counterContainerForNumber {
+  flex-wrap: wrap;
+}
+.counterNumber1, .counterNumber2, .counterNumber3, .counterNumber4 {
+position: relative;
+top: -21em;
+margin-top: 5em;
+}
+.counterContainerForText {
+  flex-wrap: wrap;
+}
+.counterText1, .counterText2, .counterText3, .counterText4{
+  position: relative;
+  top: -49em;
+  margin-top: 5em;
+}
+img{
+  width: 4em;
+}
 }
