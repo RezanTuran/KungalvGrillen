@@ -35,14 +35,14 @@ function getAllProduct() {
             let pizzaImgTd = document.createElement("img");
 
             pizzaPriceTd.classList = "pizzaPrice";
-            idTd.classList = "pizzaId"
+            idTd.classList = "pizzaId";
 
             pizzaImgTd.src = '../img/product_img/' + pizzaImg;
             idTd.innerText = id;
             pizzaNrTd.innerText = pizzaNr;
             pizzaNameTd.innerText = pizzaName;
             pizzaIngredienserTd.innerText = pizzaIngredienser;
-            pizzaPriceTd.innerText = pizzaPrice;
+            pizzaPriceTd.innerText = pizzaPrice + ":-";
             
             row.appendChild(idTd);
             row.appendChild(pizzaNrTd);
@@ -126,4 +126,95 @@ function serviceDivAniamtionOut3() {
     changeIconColor.style.color = "#212529";
 }
 
+// ### Serach Function For AdminPanel ### //
+$(document).ready(function(){
+    $("#searchInput").on("keyup", function() {
+      const value = $(this).val().toLowerCase();
+      $("#table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
 
+
+  // Counter Rows Animations //
+
+function counterRowAnimation1() {
+    let cahngeCounterRow1 = document.getElementById("counterRow1");
+    cahngeCounterRow1.style.transform = "rotate(50deg)";
+    cahngeCounterRow1.style.transition = "0.5s";
+    cahngeCounterRow1.style.background = "#fac564";
+
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor1");
+    changeCounterIconColor.style.color = "#212529";
+}
+
+function counterRowAnimation1Out() {
+    let cahngeCounterRow1 = document.getElementById("counterRow1");
+    cahngeCounterRow1.style.transform = "rotate(0deg)";
+    cahngeCounterRow1.style.background = "none";
+    cahngeCounterRow1.style.border = "1px solid #fac564";
+
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor1");
+    changeCounterIconColor.style.color = "#fac564";
+}
+
+function counterRowAnimation2() {
+    let cahngeCounterRow2 = document.getElementById("counterRow2");
+    cahngeCounterRow2.style.transform = "rotate(50deg)";
+    cahngeCounterRow2.style.transition = "0.5s";
+    cahngeCounterRow2.style.background = "#fac564";
+    
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor2");
+    changeCounterIconColor.style.color = "#212529";
+}
+
+function counterRowAnimation2Out() {
+    let cahngeCounterRow2 = document.getElementById("counterRow2");
+    cahngeCounterRow2.style.transform = "rotate(0deg)";
+    cahngeCounterRow2.style.background = "none";
+    cahngeCounterRow2.style.border = "1px solid #fac564";
+
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor2");
+    changeCounterIconColor.style.color = "#fac564";
+}
+
+function counterRowAnimation3() {
+    let counterRowAnimation3 = document.getElementById("counterRow3");
+    counterRowAnimation3.style.transform = "rotate(50deg)";
+    counterRowAnimation3.style.transition = "0.5s";
+    counterRowAnimation3.style.background = "#fac564";
+    
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor3");
+    changeCounterIconColor.style.color = "#212529";
+}
+
+function counterRowAnimation3Out() {
+    let cahngeCounterRow3 = document.getElementById("counterRow3");
+    cahngeCounterRow3.style.transform = "rotate(0deg)";
+    cahngeCounterRow3.style.background = "none";
+    cahngeCounterRow3.style.border = "1px solid #fac564";
+
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor3");
+    changeCounterIconColor.style.color = "#fac564";
+}
+
+function counterRowAnimation4() {
+    let counterRowAnimation4 = document.getElementById("counterRow4");
+    counterRowAnimation4.style.transform = "rotate(50deg)";
+    counterRowAnimation4.style.transition = "0.5s";
+    counterRowAnimation4.style.background = "#fac564";
+    
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor4");
+    changeCounterIconColor.style.color = "#212529";
+}
+
+function counterRowAnimation4Out() {
+    let cahngeCounterRow4 = document.getElementById("counterRow4");
+    cahngeCounterRow4.style.transform = "rotate(0deg)";
+    cahngeCounterRow4.style.background = "none";
+    cahngeCounterRow4.style.border = "1px solid #fac564";
+
+    let changeCounterIconColor = document.getElementById("changeCounterIconColor4");
+    changeCounterIconColor.style.color = "#fac564";
+}
