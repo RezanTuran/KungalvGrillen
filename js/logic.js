@@ -218,3 +218,14 @@ function counterRowAnimation4Out() {
     let changeCounterIconColor = document.getElementById("changeCounterIconColor4");
     changeCounterIconColor.style.color = "#fac564";
 }
+
+
+
+function loadFunction() {
+    let preLoader = document.getElementById("loading");
+    let hideBody = document.getElementById("wrapp");
+
+    hideBody.style.display = "none";
+    setTimeout(function(){ preLoader.style.display = "none"; }, 3000);
+    setTimeout(function(){ hideBody.style.display = "block"; }, 3000);
+}
