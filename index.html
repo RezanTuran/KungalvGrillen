@@ -18,8 +18,11 @@
     <script defer src="./js/logic.js"></script>
     <title>Kungälvs Grillen</title>
 </head>
-<body id="body">
+<body id="body" onload="loadFunction();">
     
+    <div id="loading"></div>
+
+<section id="wrapp">
 <nav id="nav">
     <img class="logo" src="img/logo.png" alt="logo">
     <ul>
@@ -28,7 +31,10 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
     </ul>
-                
+
+    <div class="loginBox">
+        <a class="loginLink" href="./adminPanel/login.html">Logga in</a>
+    </div>          
     <div class="hamburger-btn"><!-- ### hamburger-btn finish ###-->
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -240,6 +246,8 @@
         <div class="counterText3"><span>Nöjda Kunder</span></div>
         <div class="counterText4"><span>Trevlig Personal</span></div>
     </div>
+</section>
+
 </section>
 
 </body>

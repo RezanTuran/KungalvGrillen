@@ -173,7 +173,7 @@ function updateProduct() {
         
     })
 }
-// ### Serach Function For AdminPanel ### //
+//### Serach Function For AdminPanel ### //
 $(document).ready(function(){
     $("#searchInput").on("keyup", function() {
       const value = $(this).val().toLowerCase();
@@ -182,3 +182,36 @@ $(document).ready(function(){
       });
     });
   });
+
+
+
+  function login(){
+    let loginUserName = document.getElementsByName("userName")[0].value
+    let loginPassword = document.getElementsByName("password")[0].value
+
+    var data = new FormData()
+    data.append("action", "login");
+    data.append("myName",loginUserName );
+    data.append("myPassword",loginPassword );
+
+    makeRequest('./../server/recievers/loginRecievers.php', "POST", data, (result)=>{
+         if (result) {
+            window.location = "/adminPanel/index.html";
+         } else {
+            //alert("Det gick inte logga in kontrollera användarnamn och lösenord");
+            Swal.fire({
+                title: 'Det gick inte logga in kontrollera användarnamn och lösenord',
+                width: 600,
+                padding: '3em',
+                background: '#fff url()',
+                backdrop: `
+                rgba(255, 0, 0, 0.6)
+                url("/img/error.png")
+                left top
+                no-repeat
+                `
+              })
+        }
+        
+    }) 
+  }
