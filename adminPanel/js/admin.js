@@ -215,3 +215,33 @@ $(document).ready(function(){
         
     }) 
   }
+
+  function addNewAdmin() {
+        let insertUserName = document.getElementsByName("firstName")[0].value
+        let insertSureName = document.getElementsByName("sureName")[0].value
+        let insertEpost = document.getElementsByName("epost")[0].value
+        let insertTelnumber = document.getElementsByName("telNumber")[0].value
+        let insertPassword = document.getElementsByName("password")[0].value
+
+       
+        var data = new FormData()
+        data.append("action", "addAdmin");
+        data.append("name",insertUserName );
+        data.append("password",insertPassword );
+        data.append("lastName",insertSureName );
+        data.append("email",insertEpost );
+        data.append("telNumber",insertTelnumber );
+
+        makeRequest('./../server/recievers/registerRecievers.php', "POST", data, (result)=>{
+            if(result == true){
+                alert("Ny admin har sparat i databasen");
+            }else{
+                alert("Det gick inte spara ny admin");
+            }
+            if(result){
+                location.reload();
+            }
+            console.log(result)
+        }) 
+    
+    }
