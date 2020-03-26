@@ -21,3 +21,19 @@ try {
 
     echo json_encode(array("Message" => $e->getMessage(), "Status" => $e->getCode()));
 }
+
+try{
+    if($_SERVER["REQUEST_METHOD"] == "GET") {
+
+        if($_GET["action"] == "getAllUsers") { 
+            include_once("./../handlers/registerHandler.php");              
+            echo json_encode(getAllUsers());
+            exit;
+        }  
+    } else {
+         throw new Exception("Not a valid request method", 405);
+    }
+
+} catch(Exception $e) {
+    echo json_encode(array("Message" => $e->getMessage(), "Status" => $e->getCode()));
+}

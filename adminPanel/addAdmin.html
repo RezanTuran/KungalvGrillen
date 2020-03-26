@@ -12,6 +12,8 @@
     <title>KungälvsGrillen | Registera Admin</title>
 </head>
 <body>
+
+<section id="addNewAdmin"> 
     <input type="text" name="firstName" placeholder="Förnamn">
     <hr>
     <input type="text" name="sureName" placeholder="Efternamn">
@@ -23,6 +25,18 @@
     <input type="password" name="password" placeholder="Lösenord">
     <hr>
     <button onclick="addNewAdmin();">Spara </button>
-    
+</section>
+
+<section id="allUser">
+        <table id="UsersTable" class="table">
+                <tr>
+                    <th>Förnamn</th>
+                    <th>Efternamn</th>
+                    <th>E-post</th>
+                    <th>Telefon</th>
+                </tr>
+            </table>
+</section>
+
 </body>
 </html>
