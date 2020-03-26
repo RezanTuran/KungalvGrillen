@@ -245,3 +245,46 @@ $(document).ready(function(){
         }) 
     
     }
+
+
+    function getAllUsers() {
+        makeRequest("./../server/recievers/registerRecievers.php?action=getAllUsers", "GET", null, (result) => {
+            
+            let UsersTable = document.getElementById("UsersTable")
+    
+            for (let i = 0; i < result.length; i++) {
+
+                let userName = (result[i].name);
+                let lastName = (result[i].lastName);
+                let email = (result[i].email);
+                let telNumber = (result[i].telNumber);
+
+    
+                let row = document.createElement("tr");
+    
+                let userNameTd = document.createElement("td");
+                let lastNameTd = document.createElement("td");
+                let emailTd = document.createElement("td");
+                let telNumberTd = document.createElement("td");
+       
+    
+               
+                userNameTd.innerText = userName;
+                lastNameTd.innerText = lastName;
+                emailTd.innerText = email;
+                telNumberTd.innerText = telNumber;
+           
+    
+                row.appendChild(userNameTd);
+                row.appendChild(lastNameTd);
+                row.appendChild(emailTd);
+                row.appendChild(telNumberTd);
+    
+    
+                UsersTable.appendChild(row);
+            }
+            console.log(result);
+        })
+    }
+    getAllUsers()
+    
