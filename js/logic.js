@@ -136,96 +136,72 @@ $(document).ready(function(){
     });
   });
 
+  // Load Function
+//   function loadFunction() {
+//     let preLoader = document.getElementById("loading");
+//     let hideBody = document.getElementById("wrapp");
+
+//     hideBody.style.display = "none";
+//     setTimeout(function(){ preLoader.style.display = "none"; }, 3000);
+//     setTimeout(function(){ hideBody.style.display = "block"; }, 3000);
+// }
 
   // Counter Rows Animations //
-
+  
 function counterRowAnimation1() {
-    let cahngeCounterRow1 = document.getElementById("counterRow1");
+    let cahngeCounterRow1 = document.getElementById("counter-box1");
     cahngeCounterRow1.style.transform = "rotate(50deg)";
     cahngeCounterRow1.style.transition = "0.5s";
     cahngeCounterRow1.style.background = "#fac564";
-
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor1");
-    changeCounterIconColor.style.color = "#212529";
 }
 
 function counterRowAnimation1Out() {
-    let cahngeCounterRow1 = document.getElementById("counterRow1");
+    let cahngeCounterRow1 = document.getElementById("counter-box1");
     cahngeCounterRow1.style.transform = "rotate(0deg)";
     cahngeCounterRow1.style.background = "none";
     cahngeCounterRow1.style.border = "1px solid #fac564";
-
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor1");
-    changeCounterIconColor.style.color = "#fac564";
 }
 
 function counterRowAnimation2() {
-    let cahngeCounterRow2 = document.getElementById("counterRow2");
+    let cahngeCounterRow2 = document.getElementById("counter-box2");
     cahngeCounterRow2.style.transform = "rotate(50deg)";
     cahngeCounterRow2.style.transition = "0.5s";
     cahngeCounterRow2.style.background = "#fac564";
-    
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor2");
-    changeCounterIconColor.style.color = "#212529";
 }
 
 function counterRowAnimation2Out() {
-    let cahngeCounterRow2 = document.getElementById("counterRow2");
+    let cahngeCounterRow2 = document.getElementById("counter-box2");
     cahngeCounterRow2.style.transform = "rotate(0deg)";
     cahngeCounterRow2.style.background = "none";
     cahngeCounterRow2.style.border = "1px solid #fac564";
-
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor2");
-    changeCounterIconColor.style.color = "#fac564";
 }
 
 function counterRowAnimation3() {
-    let counterRowAnimation3 = document.getElementById("counterRow3");
+    let counterRowAnimation3 = document.getElementById("counter-box3");
     counterRowAnimation3.style.transform = "rotate(50deg)";
     counterRowAnimation3.style.transition = "0.5s";
     counterRowAnimation3.style.background = "#fac564";
-    
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor3");
-    changeCounterIconColor.style.color = "#212529";
 }
 
 function counterRowAnimation3Out() {
-    let cahngeCounterRow3 = document.getElementById("counterRow3");
+    let cahngeCounterRow3 = document.getElementById("counter-box3");
     cahngeCounterRow3.style.transform = "rotate(0deg)";
     cahngeCounterRow3.style.background = "none";
     cahngeCounterRow3.style.border = "1px solid #fac564";
-
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor3");
-    changeCounterIconColor.style.color = "#fac564";
 }
 
 function counterRowAnimation4() {
-    let counterRowAnimation4 = document.getElementById("counterRow4");
+    let counterRowAnimation4 = document.getElementById("counter-box4");
     counterRowAnimation4.style.transform = "rotate(50deg)";
     counterRowAnimation4.style.transition = "0.5s";
     counterRowAnimation4.style.background = "#fac564";
-    
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor4");
-    changeCounterIconColor.style.color = "#212529";
 }
 
 function counterRowAnimation4Out() {
-    let cahngeCounterRow4 = document.getElementById("counterRow4");
+    let cahngeCounterRow4 = document.getElementById("counter-box4");
     cahngeCounterRow4.style.transform = "rotate(0deg)";
     cahngeCounterRow4.style.background = "none";
     cahngeCounterRow4.style.border = "1px solid #fac564";
-
-    let changeCounterIconColor = document.getElementById("changeCounterIconColor4");
-    changeCounterIconColor.style.color = "#fac564";
 }
 
 
-
-function loadFunction() {
-    let preLoader = document.getElementById("loading");
-    let hideBody = document.getElementById("wrapp");
-
-    hideBody.style.display = "none";
-    setTimeout(function(){ preLoader.style.display = "none"; }, 3000);
-    setTimeout(function(){ hideBody.style.display = "block"; }, 3000);
-}

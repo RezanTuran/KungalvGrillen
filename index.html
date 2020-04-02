@@ -214,37 +214,45 @@
 <section id="galery">
     <div id="GaleryImg-1"></div>
     <div id="GaleryImg-2"></div>
-    <div id="GaleryImg-3"></div>
     <div id="GaleryImg-4"></div>
+    <div id="GaleryImg-3"></div>
 </section>
 
 <section id="counter">
     <div class="overlay"></div>
-    <div class="counterContainerIcons">
-        <div onmouseover="counterRowAnimation1();" onmouseout="counterRowAnimation1Out();" id="counterRow1"><i id="changeCounterIconColor1" class="fas fa-pizza-slice counterIcons"></i></div>
-        <div onmouseover="counterRowAnimation2();" onmouseout="counterRowAnimation2Out();" id="counterRow2"><i id="changeCounterIconColor2" class="fas fa-medal counterIcons"></i></div>
-        <div onmouseover="counterRowAnimation3();" onmouseout="counterRowAnimation3Out();" id="counterRow3"><i id="changeCounterIconColor3" class="fas fa-grin-beam counterIcons"></i></div>
-        <div onmouseover="counterRowAnimation4();" onmouseout="counterRowAnimation4Out();" id="counterRow4"><i id="changeCounterIconColor4" class="fas fa-user-check counterIcons"></i></div>
+        <div id="counter-box1" onmouseover="counterRowAnimation1();" onmouseout="counterRowAnimation1Out();">
+            <i class="fas fa-pizza-slice counter-icon"></i>
+            <p class="status-p">100</p>
+            <h4 class="status-h4">Pizza Grenar</h4>
+        </div>
+        <div id="counter-box2" onmouseover="counterRowAnimation2();" onmouseout="counterRowAnimation2Out();">
+            <i class="fas fa-medal counter-icon"></i>
+            <p class="status-p">85</p>
+            <h4 class="status-h4">Antal Utmärkelser</h4>
+        </div>
+        <div id="counter-box3" onmouseover="counterRowAnimation3();" onmouseout="counterRowAnimation3Out();">
+            <i class="fas fa-grin-beam counter-icon"></i>
+            <p class="status-p">10,567</p>
+            <h4 class="status-h4">Nöjda Kunder</h4>
+        </div>
+        <div id="counter-box4" onmouseover="counterRowAnimation4();" onmouseout="counterRowAnimation4Out();">
+            <i class="fas fa-utensils counter-icon"></i>
+            <p class="status-p">900</p>
+            <h4 class="status-h4">Trevliga Personal</h4>
+        </div>
     </div>
-    <div class="counterContainerForNumber">
-        <div class="counterNumber1">
-            <strong>100</strong>
-        </div>
-        <div class="counterNumber2">
-            <strong>85</strong>
-        </div>
-        <div class="counterNumber3">
-            <strong>10,567</strong>
-        </div>
-        <div class="counterNumber4">
-            <strong>900</strong>
-        </div>
+</section>
+
+<section id="footer">
+    <div class="foot-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4681.189264161019!2d11.94804043729818!3d57.871652320928206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdac288c7b8a90a77!2sKung%C3%A4lvsgrillen!5e0!3m2!1ssv!2sse!4v1585870105540!5m2!1ssv!2sse" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
-    <div class="counterContainerForText">
-        <div class="counterText1"><span>Pizza Sorter</span></div>
-        <div class="counterText2"><span>Antal Utmärkelser</span></div>
-        <div class="counterText3"><span>Nöjda Kunder</span></div>
-        <div class="counterText4"><span>Trevlig Personal</span></div>
+    <div class="foot-box">
+        <h1 class="contactus-rubrik">Kontakta Oss</h1>
+        <input type="text" placeholder="Förnamn">
+        <input type="text" placeholder="Efternamn">
+        <input type="text" placeholder="Meddelande">
+        
     </div>
 </section>
 
